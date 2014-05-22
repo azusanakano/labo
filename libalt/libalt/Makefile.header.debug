@@ -1,0 +1,31 @@
+#--------------------------------------------------------------------------
+#
+#  Alternative Library
+#
+#
+#  Copyright (C) 2007 - 2013 Azusa Nakano All Rights Reserved.
+#
+#  This program is released under term of the Apache License 2.0.
+#  See details for http://www.apache.org/licenses/LICENSE-2.0
+#
+#---------------------------------------------------------------------------
+obj_dir=../debug
+
+CXX = g++
+MV = mv
+AR = ar
+LN = ln
+
+CFLAGS = -Wall -ggdb -pg -fPIC -D_DEBUG -I.. -rdynamic
+
+BUILD_OK_MSG = @ printf "DEBUG BUILD [OK]\n"
+CREATE_OBJ_MSG = printf "create obj ... $(@F)\n"
+
+
+CXX_OBJ = $(CXX) $(CFLAGS) -c
+
+CREATE_OBJ = @\
+  $(CREATE_OBJ_MSG); \
+  $(CXX_OBJ) $(@F:.o=.cpp); \
+  $(MV) -f $(@F) $(obj_dir)
+

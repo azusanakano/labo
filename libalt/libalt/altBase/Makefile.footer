@@ -1,0 +1,138 @@
+#--------------------------------------------------------------------------
+#
+#
+#  Alternative Library
+#
+#
+#  Copyright (C) 2007 - 2013 Azusa Nakano All Rights Reserved.
+#
+#  This program is released under term of the Apache License 2.0.
+#  See details for http://www.apache.org/licenses/LICENSE-2.0
+#
+#---------------------------------------------------------------------------
+
+source_list = \
+  altBase.cpp \
+  altBaseMem.cpp \
+  altLoopThread.cpp \
+  altMemInfo.cpp \
+  altMemManager.cpp \
+  altSyncThread.cpp \
+  altThread.cpp \
+  altStr.cpp \
+  altWStr.cpp \
+  altStatus.cpp \
+  altDateTime.cpp \
+  altBaseLog.cpp \
+  altLog.cpp \
+  altMem.cpp \
+  altCharPtr.cpp \
+  altSignal.cpp \
+  altRuntime.cpp \
+  altUtil.cpp
+
+include_list = \
+  altBase.h \
+  altBaseMem.h \
+  altCommon.h \
+  altLoopThread.h \
+  altMemInfo.h \
+  altMemManager.h \
+  altSyncThread.h \
+  altThread.h \
+  altStr.h \
+  altWStr.h \
+  altStatus.h \
+  altSingleton.h \
+  altDateTime.h \
+  altBaseLog.h \
+  altLog.h \
+  altMem.h \
+  altPtr.h \
+  altCharPtr.h \
+  altSignal.h \
+  altRuntime.h \
+  altUtil.h
+
+object_list = \
+  $(obj_dir)/altBase.o \
+  $(obj_dir)/altBaseMem.o \
+  $(obj_dir)/altLoopThread.o \
+  $(obj_dir)/altMemInfo.o \
+  $(obj_dir)/altMemManager.o \
+  $(obj_dir)/altSyncThread.o \
+  $(obj_dir)/altThread.o \
+  $(obj_dir)/altStr.o \
+  $(obj_dir)/altWStr.o \
+  $(obj_dir)/altStatus.o \
+  $(obj_dir)/altDateTime.o \
+  $(obj_dir)/altBaseLog.o \
+  $(obj_dir)/altLog.o \
+  $(obj_dir)/altMem.o \
+  $(obj_dir)/altCharPtr.o \
+  $(obj_dir)/altSignal.o \
+  $(obj_dir)/altRuntime.o \
+  $(obj_dir)/altUtil.o
+
+######################################################################
+all : $(object_list)
+	$(BUILD_OK_MSG)
+
+######################################################################
+$(obj_dir)/altBase.o : altBase.cpp altBase.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altBaseMem.o : altBaseMem.cpp altBaseMem.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altLoopThread.o : altLoopThread.cpp altLoopThread.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMemInfo.o : altMemInfo.cpp altMemInfo.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMemManager.o : altMemManager.cpp altMemManager.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSyncThread.o : altSyncThread.cpp altSyncThread.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altThread.o : altThread.cpp altThread.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altStr.o : altStr.cpp altStr.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altWStr.o : altWStr.cpp altWStr.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altStatus.o : altStatus.cpp altStatus.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altDateTime.o : altDateTime.cpp altDateTime.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altBaseLog.o : altBaseLog.cpp altBaseLog.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altLog.o : altLog.cpp altLog.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMem.o : altMem.cpp altMem.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altCharPtr.o : altCharPtr.cpp altCharPtr.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSignal.o : altSignal.cpp altSignal.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altRuntime.o : altRuntime.cpp altRuntime.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altUtil.o : altUtil.cpp altUtil.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir) :
+	mkdir $(obj_dir)
+

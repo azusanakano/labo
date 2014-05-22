@@ -1,0 +1,79 @@
+#--------------------------------------------------------------------------
+#
+#   Alternative Library Test
+#
+#  $Id: Makefile 57 2007-05-11 20:42:18Z nekosys $
+#
+#  Copyright (C) 2007 NEKO SYSTEM
+# 
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU Library General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or any later version.
+# 
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU Library General Public License for more details.
+# 
+#  You should have received a copy of the GNU Library General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#---------------------------------------------------------------------------
+obj_dir=release
+lib_dir=../release
+
+source_list = \
+  main.cpp 
+
+include_list = \
+
+object_list = \
+  $(obj_dir)/main.o 
+
+lib_list = $(lib_dir)/libalt.so
+
+exe_list = $(lib_dir)/ssl_echo_server.exe
+
+######################################################################
+create_obj_msg = printf "create obj ... $(@F)\n"
+link_msg = printf "link ... $(@F)\n"
+
+
+######################################################################
+CFLAGS = -Wall -O2 -I../libalt -fPIC -DNDEBUG
+CXX = g++
+MV = mv
+AR = ar
+LN = ln
+
+CXX_OBJ = $(CXX) $(CFLAGS) -c
+
+CREATE_OBJ = @\
+  $(create_obj_msg); \
+  $(CXX_OBJ) $(@F:.o=.cpp); \
+  $(MV) -f $(@F) $(obj_dir)
+
+
+SHARED_LINK =\
+ @$(link_msg);\
+ $(CXX) $(object_list) -o $(@) $(lib_list)
+
+######################################################################
+all : $(object_list) $(exe_list)
+	 @printf "RELEASE BUILD [OK]\n"
+
+######################################################################
+$(lib_dir)/ssl_echo_server.exe : $(obj_list) $(lib_list) $(lib_dir)
+	$(SHARED_LINK)
+
+$(lib_dir) :
+	mkdir $(lib_dir)
+	
+######################################################################
+$(obj_dir)/main.o : main.cpp $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir) :
+	mkdir $(obj_dir)
+

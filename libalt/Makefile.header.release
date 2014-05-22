@@ -1,0 +1,31 @@
+#--------------------------------------------------------------------------
+#
+#  Alternative Library
+#
+#
+#  Copyright (C) 2007 - 2013 Azusa Nakano All Rights Reserved.
+#
+#  This program is released under term of the Apache License 2.0.
+#  See details for http://www.apache.org/licenses/LICENSE-2.0
+#
+#---------------------------------------------------------------------------
+lib_dir=../release
+obj_dir=release
+
+
+BUILD_OK_MSG = @ printf "RELEASE BUILD [OK]\n"
+staticlib_msg = printf "create static library ... $(@F)\n"
+sharelib_msg = printf "create shared library ... $(@F)\n"
+
+CXX = g++
+AR = ar
+
+LIBFLAGS=-lpthread -lssl -lmysqlclient -lbz2 -L/usr/lib64/mysql
+
+CREATE_STATIC_LIB = $(staticlib_msg); \
+  $(AR) -uvr $(@) $(object_list)
+
+CREATE_SHARE_LIB = $(sharelib_msg); \
+  $(CXX) -shared -Wl,-soname,$(@) -fPIC -o $(@) $(object_list) $(LIBFLAGS)
+
+

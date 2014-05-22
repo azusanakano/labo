@@ -1,0 +1,104 @@
+#--------------------------------------------------------------------------
+#
+#  Alternative Library
+#
+#
+#  Copyright (C) 2007 - 2013 Azusa Nakano All Rights Reserved.
+#
+#  This program is released under term of the Apache License 2.0.
+#  See details for http://www.apache.org/licenses/LICENSE-2.0
+#
+#---------------------------------------------------------------------------
+
+object_list = \
+  $(obj_dir)/altBase.o \
+  $(obj_dir)/altBaseMem.o \
+  $(obj_dir)/altLoopThread.o \
+  $(obj_dir)/altMemInfo.o \
+  $(obj_dir)/altMemManager.o \
+  $(obj_dir)/altSyncThread.o \
+  $(obj_dir)/altThread.o \
+  $(obj_dir)/altStr.o \
+  $(obj_dir)/altWStr.o \
+  $(obj_dir)/altStatus.o \
+  $(obj_dir)/altDateTime.o \
+  $(obj_dir)/altBaseLog.o \
+  $(obj_dir)/altLog.o \
+  $(obj_dir)/altMem.o \
+  $(obj_dir)/altCharPtr.o \
+  $(obj_dir)/altSignal.o \
+  $(obj_dir)/altRuntime.o \
+  $(obj_dir)/altUtil.o \
+  $(obj_dir)/altTCPServer.o \
+  $(obj_dir)/altTCPAcceptor.o \
+  $(obj_dir)/altTCPConnection.o \
+  $(obj_dir)/altSocket.o \
+  $(obj_dir)/altSocketAddress.o \
+  $(obj_dir)/altInetAddress.o \
+  $(obj_dir)/altTCPClient.o \
+  $(obj_dir)/altClientPacket.o \
+  $(obj_dir)/altFile.o \
+  $(obj_dir)/altBzip2.o \
+  $(obj_dir)/altBlowFish.o \
+  $(obj_dir)/altMiscUtil.o \
+  $(obj_dir)/altTimer.o \
+  $(obj_dir)/altSHA1.o \
+  $(obj_dir)/altMD5.o \
+  $(obj_dir)/altMemLogger.o \
+  $(obj_dir)/altDataStream.o \
+  $(obj_dir)/altExternalizable.o \
+  $(obj_dir)/altProperty.o \
+  $(obj_dir)/altSSLAcceptor.o \
+  $(obj_dir)/altSSLConnection.o \
+  $(obj_dir)/altSSLServer.o \
+  $(obj_dir)/altSSLSyncThread.o \
+  $(obj_dir)/altSSLClient.o \
+  $(obj_dir)/altSSLSocket.o \
+  $(obj_dir)/altNETConnection.o \
+  $(obj_dir)/altNETConnectionManager.o \
+  $(obj_dir)/altNETPacket.o \
+  $(obj_dir)/altNETReceiver.o \
+  $(obj_dir)/altNETReceiverBroker.o \
+  $(obj_dir)/altNETRequest.o \
+  $(obj_dir)/altNETRequestInvoker.o \
+  $(obj_dir)/altNETSender.o \
+  $(obj_dir)/altNETSenderBroker.o \
+  $(obj_dir)/altNETServerConnection.o \
+  $(obj_dir)/altNETServerInfo.o \
+  $(obj_dir)/altTCPServerConnection.o \
+  $(obj_dir)/altSSLServerConnection.o \
+  $(obj_dir)/altSMTPClient.o \
+  $(obj_dir)/altTCPSocket.o \
+  $(obj_dir)/altSQL.o \
+  $(obj_dir)/altDBRow.o \
+  $(obj_dir)/altDBResultSet.o \
+  $(obj_dir)/altDBConnection.o \
+  $(obj_dir)/altPreparedStatement.o \
+  $(obj_dir)/altDBManager.o \
+  $(obj_dir)/altMySQL.o \
+  $(obj_dir)/altMySQLRes.o \
+  $(obj_dir)/altMySQLStmt.o \
+  $(obj_dir)/altMySQLDBConnection.o \
+  $(obj_dir)/altMySQLPreparedStatement.o \
+  $(obj_dir)/altSQLLoader.o \
+  $(obj_dir)/altDBConnectionPtr.o \
+  $(obj_dir)/altNetUtil.o
+
+lib_list = $(lib_dir)/libalt.so $(lib_dir)/libalt.a
+
+
+######################################################################
+all : $(lib_list)
+	$(BUILD_OK_MSG)
+
+
+######################################################################
+$(lib_dir)/libalt.so : $(object_list) $(lib_dir)
+	@$(CREATE_SHARE_LIB)
+
+$(lib_dir)/libalt.a : $(object_list) $(lib_dir)
+	@$(CREATE_STATIC_LIB)
+
+$(lib_dir) : 
+	mkdir $(lib_dir)
+

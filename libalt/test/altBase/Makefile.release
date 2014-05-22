@@ -1,0 +1,73 @@
+#--------------------------------------------------------------------------
+#
+#   Alternative Library Test
+#
+#  $Id: Makefile 57 2007-05-11 20:42:18Z nekosys $
+#
+#  Copyright (C) 2007 NEKO SYSTEM
+# 
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU Library General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or any later version.
+# 
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU Library General Public License for more details.
+# 
+#  You should have received a copy of the GNU Library General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#---------------------------------------------------------------------------
+obj_dir=../release
+
+source_list = \
+  testCommon.cpp \
+  testBaseMem.cpp \
+  testStr.cpp
+
+include_list = \
+  testCommon.h \
+  testBaseMem.h \
+  testStr.h
+
+object_list = \
+  $(obj_dir)/testCommon.o \
+  $(obj_dir)/testBaseMem.o \
+  $(obj_dir)/testStr.o
+
+######################################################################
+create_obj_msg = printf "create obj ... $(@F)\n"
+
+
+######################################################################
+CFLAGS = -Wall -O2 -I.. -I../../libalt -fPIC -DNDEBUG
+CXX = g++
+MV = mv
+
+CXX_OBJ = $(CXX) $(CFLAGS) -c
+
+CREATE_OBJ = @\
+  $(create_obj_msg); \
+  $(CXX_OBJ) $(@F:.o=.cpp); \
+  $(MV) -f $(@F) $(obj_dir)
+
+######################################################################
+all : $(object_list)
+	@ printf "[OK]\n"
+	
+######################################################################
+
+$(obj_dir)/testCommon.o : testCommon.cpp testCommon.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/testBaseMem.o : testBaseMem.cpp testBaseMem.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/testStr.o : testStr.cpp testStr.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir) :
+	mkdir $(obj_dir)
+

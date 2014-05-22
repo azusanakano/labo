@@ -1,0 +1,107 @@
+#--------------------------------------------------------------------------
+#
+#  Alternative Library
+#
+#
+#  Copyright (C) 2007 - 2013 Azusa Nakano All Rights Reserved.
+#
+#  This program is released under term of the Apache License 2.0.
+#  See details for http://www.apache.org/licenses/LICENSE-2.0
+#
+#---------------------------------------------------------------------------
+
+source_list = \
+  altDBRow.cpp \
+  altDBResultSet.cpp \
+  altDBConnection.cpp \
+  altPreparedStatement.cpp \
+  altDBManager.cpp \
+  altMySQL.cpp \
+  altMySQLRes.cpp \
+  altMySQLStmt.cpp \
+  altMySQLDBConnection.cpp \
+  altMySQLPreparedStatement.cpp \
+  altSQLLoader.cpp \
+  altDBConnectionPtr.cpp \
+  altSQL.cpp
+
+include_list = \
+  altDBRow.h \
+  altDBResultSet.h \
+  altDBConnection.h \
+  altPreparedStatement.h \
+  altDBManager.h \
+  altMySQL.h \
+  altMySQLRes.h \
+  altMySQLStmt.h \
+  altMySQLDBConnection.h \
+  altMySQLPreparedStatement.h \
+  altSQLLoader.h \
+  altDBConnectionPtr.h \
+  altSQL.h
+
+object_list = \
+  $(obj_dir)/altDBRow.o \
+  $(obj_dir)/altDBResultSet.o \
+  $(obj_dir)/altDBConnection.o \
+  $(obj_dir)/altPreparedStatement.o \
+  $(obj_dir)/altDBManager.o \
+  $(obj_dir)/altMySQL.o \
+  $(obj_dir)/altMySQLRes.o \
+  $(obj_dir)/altMySQLStmt.o \
+  $(obj_dir)/altMySQLDBConnection.o \
+  $(obj_dir)/altMySQLPreparedStatement.o \
+  $(obj_dir)/altSQLLoader.o \
+  $(obj_dir)/altDBConnectionPtr.o \
+  $(obj_dir)/altSQL.o 
+
+
+######################################################################
+all : $(object_list)
+	$(BUILD_OK_MSG)
+
+
+######################################################################
+$(obj_dir)/altDBRow.o : altDBRow.cpp altDBRow.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altDBResultSet.o : altDBResultSet.cpp altDBResultSet.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altDBConnection.o : altDBConnection.cpp altDBConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altPreparedStatement.o : altPreparedStatement.cpp altPreparedStatement.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altDBManager.o : altDBManager.cpp altDBManager.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMySQL.o : altMySQL.cpp altMySQL.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMySQLRes.o : altMySQLRes.cpp altMySQLRes.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMySQLStmt.o : altMySQLStmt.cpp altMySQLStmt.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMySQLDBConnection.o : altMySQLDBConnection.cpp altMySQLDBConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+ 
+$(obj_dir)/altMySQLPreparedStatement.o : altMySQLPreparedStatement.cpp altMySQLPreparedStatement.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSQLLoader.o : altSQLLoader.cpp altSQLLoader.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altDBConnectionPtr.o : altDBConnectionPtr.cpp altDBConnectionPtr.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSQL.o : altSQL.cpp altSQL.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir) :
+	mkdir $(obj_dir)
+
+

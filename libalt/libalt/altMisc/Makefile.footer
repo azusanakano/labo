@@ -1,0 +1,94 @@
+#--------------------------------------------------------------------------
+#
+#  Alternative Library
+#
+#
+#  Copyright (C) 2007 - 2013 Azusa Nakano All Rights Reserved.
+#
+#  This program is released under term of the Apache License 2.0.
+#  See details for http://www.apache.org/licenses/LICENSE-2.0
+#
+#---------------------------------------------------------------------------
+
+source_list = \
+  altFile.cpp \
+  altBzip2.cpp \
+  altBlowFish.cpp \
+  altMiscUtil.cpp \
+  altTimer.cpp \
+  altSHA1.cpp \
+  altMD5.cpp \
+  altMemLogger.cpp \
+  altDataStream.cpp \
+  altExternalizable.cpp \
+  altProperty.cpp
+
+include_list = \
+  altFile.h \
+  altBzip2.h \
+  altBlowFish.h \
+  altMiscUtil.h \
+  altTimer.h \
+  altSHA1.h \
+  altMD5.h \
+  altMemLogger.h \
+  altDataStream.h \
+  altExternalizable.h \
+  altProperty.h
+
+object_list = \
+  $(obj_dir)/altFile.o \
+  $(obj_dir)/altBzip2.o \
+  $(obj_dir)/altBlowFish.o \
+  $(obj_dir)/altMiscUtil.o \
+  $(obj_dir)/altTimer.o \
+  $(obj_dir)/altSHA1.o \
+  $(obj_dir)/altMD5.o \
+  $(obj_dir)/altMemLogger.o \
+  $(obj_dir)/altDataStream.o \
+  $(obj_dir)/altExternalizable.o \
+  $(obj_dir)/altProperty.o
+
+
+######################################################################
+all : $(object_list)
+	$(BUILD_OK_MSG)
+
+######################################################################
+$(obj_dir)/altFile.o : altFile.cpp altFile.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altBzip2.o : altBzip2.cpp altBzip2.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altBlowFish.o : altBlowFish.cpp altBlowFish.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMiscUtil.o : altMiscUtil.cpp altMiscUtil.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altTimer.o : altTimer.cpp altTimer.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSHA1.o : altSHA1.cpp altSHA1.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMD5.o : altMD5.cpp altMD5.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altMemLogger.o : altMemLogger.cpp altMemLogger.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altDataStream.o : altDataStream.cpp altDataStream.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altExternalizable.o : altExternalizable.cpp altExternalizable.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altProperty.o : altProperty.cpp altProperty.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir) :
+	mkdir $(obj_dir)
+
+

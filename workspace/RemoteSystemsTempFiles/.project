@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>RemoteSystemsTempFiles</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.rse.ui.remoteSystemsTempNature</nature>
+	</natures>
+</projectDescription>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>RemoteSystemsTempFiles</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.rse.ui.remoteSystemsTempNature</nature>
+	</natures>
+</projectDescription>
+>>>>>>> c0e475a1fd1d5b9c9ec7b27304fd270f862a3f2a

@@ -1,0 +1,222 @@
+#--------------------------------------------------------------------------
+#
+#  Alternative Library
+#
+#
+#  Copyright (C) 2007 - 2013 Azusa Nakano All Rights Reserved.
+#
+#  This program is released under term of the Apache License 2.0.
+#  See details for http://www.apache.org/licenses/LICENSE-2.0
+#
+#---------------------------------------------------------------------------
+
+source_list = \
+  altTCPServer.cpp \
+  altTCPAcceptor.cpp \
+  altTCPConnection.cpp \
+  altTCPConnectionManager.cpp \
+  altTCPReceiver.cpp \
+  altTCPReceiverBroker.cpp \
+  altTCPRequestInvoker.cpp \
+  altTCPSender.cpp \
+  altTCPSenderBroker.cpp \
+  altTCPPacket.cpp \
+  altSocket.cpp \
+  altSocketAddress.cpp \
+  altInetAddress.cpp \
+  altTCPClient.cpp \
+  altClientPacket.cpp \
+  altSSLAcceptor.cpp \
+  altSSLConnection.cpp \
+  altSSLServer.cpp \
+  altSSLSyncThread.cpp \
+  altSSLClient.cpp \
+  altSSLSocket.cpp \
+  altNETConnection.cpp \
+  altNETConnectionManager.cpp \
+  altNETPacket.cpp \
+  altNETReceiver.cpp \
+  altNETReceiverBroker.cpp \
+  altNETRequest.cpp \
+  altNETRequestInvoker.cpp \
+  altNETSender.cpp \
+  altNETSenderBroker.cpp \
+  altNETServerConnection.cpp \
+  altNETServerInfo.cpp \
+  altTCPServerConnection.cpp \
+  altSSLServerConnection.cpp \
+  altSMTPClient.cpp \
+  altTCPSocket.cpp \
+  altNetUtil.cpp
+
+include_list = \
+  altTCPServer.h \
+  altTCPAcceptor.h \
+  altTCPConnection.h \
+  altTCPPacket.h \
+  altSocket.h \
+  altSocketAddress.h \
+  altInetAddress.h \
+  altTCPClient.h \
+  altClientPacket.h \
+  altNetUtil.h \
+  altSSLAcceptor.h \
+  altSSLConnection.h \
+  altSSLServer.h \
+  altSSLSyncThread.h \
+  altSSLClient.h \
+  altSSLSocket.h \
+  altTCPRequest.h \
+  altSSLRequest.h \
+  altNETConnection.h \
+  altNETConnectionManager.h \
+  altNETPacket.h \
+  altNETReceiver.h \
+  altNETReceiverBroker.h \
+  altNETRequest.h \
+  altNETRequestInvoker.h \
+  altNETSender.h \
+  altNETSenderBroker.h \
+  altNETServerConnection.h \
+  altNETServerInfo.h \
+  altTCPServerConnection.h \
+  altSSLServerConnection.h \
+  altSMTPClient.h \
+  altTCPSocket.h \
+  altNetCommon.h
+
+object_list = \
+  $(obj_dir)/altTCPServer.o \
+  $(obj_dir)/altTCPAcceptor.o \
+  $(obj_dir)/altTCPConnection.o \
+  $(obj_dir)/altSocket.o \
+  $(obj_dir)/altSocketAddress.o \
+  $(obj_dir)/altInetAddress.o \
+  $(obj_dir)/altTCPClient.o \
+  $(obj_dir)/altClientPacket.o \
+  $(obj_dir)/altSSLAcceptor.o \
+  $(obj_dir)/altSSLConnection.o \
+  $(obj_dir)/altSSLServer.o \
+  $(obj_dir)/altSSLSyncThread.o \
+  $(obj_dir)/altSSLClient.o \
+  $(obj_dir)/altSSLSocket.o \
+  $(obj_dir)/altNETConnection.o \
+  $(obj_dir)/altNETConnectionManager.o \
+  $(obj_dir)/altNETPacket.o \
+  $(obj_dir)/altNETReceiver.o \
+  $(obj_dir)/altNETReceiverBroker.o \
+  $(obj_dir)/altNETRequest.o \
+  $(obj_dir)/altNETRequestInvoker.o \
+  $(obj_dir)/altNETSender.o \
+  $(obj_dir)/altNETSenderBroker.o \
+  $(obj_dir)/altNETServerConnection.o \
+  $(obj_dir)/altNETServerInfo.o \
+  $(obj_dir)/altTCPServerConnection.o \
+  $(obj_dir)/altSSLServerConnection.o \
+  $(obj_dir)/altSMTPClient.o \
+  $(obj_dir)/altTCPSocket.o \
+  $(obj_dir)/altNetUtil.o
+
+
+######################################################################
+all : $(object_list)
+	$(BUILD_OK_MSG)
+
+
+######################################################################
+$(obj_dir)/altTCPServer.o : altTCPServer.cpp altTCPServer.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altTCPAcceptor.o : altTCPAcceptor.cpp altTCPAcceptor.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altTCPConnection.o : altTCPConnection.cpp altTCPConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altTCPSender.o : altTCPSender.cpp altTCPSender.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSocket.o : altSocket.cpp altSocket.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSocketAddress.o : altSocketAddress.cpp altSocketAddress.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altInetAddress.o : altInetAddress.cpp altInetAddress.h $(obj_dir)
+	$(CREATE_OBJ)
+	
+$(obj_dir)/altTCPClient.o : altTCPClient.cpp altTCPClient.h $(obj_dir)
+	$(CREATE_OBJ)
+	
+$(obj_dir)/altClientPacket.o : altClientPacket.cpp altClientPacket.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSSLAcceptor.o : altSSLAcceptor.cpp altSSLAcceptor.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSSLConnection.o : altSSLConnection.cpp altSSLConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSSLServer.o : altSSLServer.cpp altSSLServer.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSSLSyncThread.o : altSSLSyncThread.cpp altSSLSyncThread.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSSLClient.o : altSSLClient.cpp altSSLClient.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSSLSocket.o : altSSLSocket.cpp altSSLSocket.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETConnection.o : altNETConnection.cpp altNETConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETConnectionManager.o : altNETConnectionManager.cpp altNETConnectionManager.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETPacket.o : altNETPacket.cpp altNETPacket.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETReceiver.o : altNETReceiver.cpp altNETReceiver.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETReceiverBroker.o : altNETReceiverBroker.cpp altNETReceiverBroker.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETRequest.o : altNETRequest.cpp altNETRequest.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETRequestInvoker.o : altNETRequestInvoker.cpp altNETRequestInvoker.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETSender.o : altNETSender.cpp altNETSender.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETSenderBroker.o : altNETSenderBroker.cpp altNETSenderBroker.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETServerConnection.o : altNETServerConnection.cpp altNETServerConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNETServerInfo.o : altNETServerInfo.cpp altNETServerInfo.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altTCPServerConnection.o : altTCPServerConnection.cpp altTCPServerConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSSLServerConnection.o : altSSLServerConnection.cpp altSSLServerConnection.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altSMTPClient.o : altSMTPClient.cpp altSMTPClient.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altTCPSocket.o : altTCPSocket.cpp altTCPSocket.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir)/altNetUtil.o : altNetUtil.cpp altNetUtil.h $(obj_dir)
+	$(CREATE_OBJ)
+
+$(obj_dir) :
+	mkdir $(obj_dir)
+
